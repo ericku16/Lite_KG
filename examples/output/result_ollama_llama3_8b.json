@@ -1,0 +1,106 @@
+[
+  {
+    "subject": {
+      "name": "Diamond Electric Mfg. Co.",
+      "canonical_name": "Diamond Electric Mfg. Co.",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "coil-on-plug ignition coils",
+      "canonical_name": "coil-on-plug ignition coils",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "NGK Spark Plug Co.",
+      "canonical_name": "NGK Spark Plug Co.",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "wideband oxygen sensors",
+      "canonical_name": "wideband oxygen sensors",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "Kyosan Denki Co.",
+      "canonical_name": "Kyosan Denki Co.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Musashi Seimitsu Industry Co.",
+      "canonical_name": "Musashi Seimitsu Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Akebono Brake Industry Co.",
+      "canonical_name": "Akebono Brake Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aisan Industry",
+      "canonical_name": "Aisan Industry",
+      "wikidata_id": "Q11493434"
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "VVT-i",
+      "canonical_name": "VVT-i",
+      "wikidata_id": "Q2312817"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aisan Industry",
+      "canonical_name": "Aisan Industry",
+      "wikidata_id": "Q11493434"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Obu",
+      "canonical_name": "Obu",
+      "wikidata_id": "Q384809"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aisan Industry",
+      "canonical_name": "Aisan Industry",
+      "wikidata_id": "Q11493434"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Aichi",
+      "canonical_name": "Aichi",
+      "wikidata_id": "Q94094"
+    }
+  }
+]

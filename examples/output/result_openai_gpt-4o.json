@@ -1,0 +1,340 @@
+[
+  {
+    "subject": {
+      "name": "Diamond Electric Mfg. Co., Ltd.",
+      "canonical_name": "Diamond Electric Mfg. Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Osaka",
+      "canonical_name": "Osaka",
+      "wikidata_id": "Q35765"
+    }
+  },
+  {
+    "subject": {
+      "name": "Diamond Electric Mfg. Co., Ltd.",
+      "canonical_name": "Diamond Electric Mfg. Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Japan",
+      "canonical_name": "Japan",
+      "wikidata_id": "Q17"
+    }
+  },
+  {
+    "subject": {
+      "name": "Diamond Electric Mfg. Co., Ltd.",
+      "canonical_name": "Diamond Electric Mfg. Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "coil-on-plug ignition coils",
+      "canonical_name": "coil-on-plug ignition coils",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "Diamond Electric Mfg. Co., Ltd.",
+      "canonical_name": "Diamond Electric Mfg. Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "NGK Spark Plug Co., Ltd",
+      "canonical_name": "NGK Spark Plug Co., Ltd",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Nagoya",
+      "canonical_name": "Nagoya",
+      "wikidata_id": "Q11751"
+    }
+  },
+  {
+    "subject": {
+      "name": "NGK Spark Plug Co., Ltd",
+      "canonical_name": "NGK Spark Plug Co., Ltd",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "wideband oxygen sensors",
+      "canonical_name": "wideband oxygen sensors",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "NGK Spark Plug Co., Ltd",
+      "canonical_name": "NGK Spark Plug Co., Ltd",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Kyosan Denki Co., Ltd.",
+      "canonical_name": "Kyosan Denki Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Obu",
+      "canonical_name": "Obu",
+      "wikidata_id": "Q384809"
+    }
+  },
+  {
+    "subject": {
+      "name": "Kyosan Denki Co., Ltd.",
+      "canonical_name": "Kyosan Denki Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Aichi",
+      "canonical_name": "Aichi",
+      "wikidata_id": "Q94094"
+    }
+  },
+  {
+    "subject": {
+      "name": "Kyosan Denki Co., Ltd.",
+      "canonical_name": "Kyosan Denki Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "fuel pump module",
+      "canonical_name": "Fuel pump module",
+      "wikidata_id": "Q123785711"
+    }
+  },
+  {
+    "subject": {
+      "name": "Kyosan Denki Co., Ltd.",
+      "canonical_name": "Kyosan Denki Co., Ltd.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aichi Steel Corporation",
+      "canonical_name": "Aichi Steel",
+      "wikidata_id": "Q403696"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Tōkai",
+      "canonical_name": "Tōkai-shi",
+      "wikidata_id": "Q622620"
+    }
+  },
+  {
+    "subject": {
+      "name": "Musashi Seimitsu Industry Co.",
+      "canonical_name": "Musashi Seimitsu Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Toyohashi",
+      "canonical_name": "Toyohashi",
+      "wikidata_id": "Q336431"
+    }
+  },
+  {
+    "subject": {
+      "name": "Musashi Seimitsu Industry Co.",
+      "canonical_name": "Musashi Seimitsu Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "GKN Automotive",
+      "canonical_name": "GKN Automotive",
+      "wikidata_id": "Q5513579"
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "driveshafts",
+      "canonical_name": "driveshafts",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "GKN Automotive",
+      "canonical_name": "GKN Automotive",
+      "wikidata_id": "Q5513579"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Birmingham",
+      "canonical_name": "Birmingham",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "GKN Automotive",
+      "canonical_name": "GKN Automotive",
+      "wikidata_id": "Q5513579"
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Akebono Brake Industry Co.",
+      "canonical_name": "Akebono Brake Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Hanyu",
+      "canonical_name": "Hanyu",
+      "wikidata_id": "Q133254097"
+    }
+  },
+  {
+    "subject": {
+      "name": "Akebono Brake Industry Co.",
+      "canonical_name": "Akebono Brake Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "brake calipers",
+      "canonical_name": "brake caliper",
+      "wikidata_id": "Q2712997"
+    }
+  },
+  {
+    "subject": {
+      "name": "Akebono Brake Industry Co.",
+      "canonical_name": "Akebono Brake Industry Co.",
+      "wikidata_id": null
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Enkei Corporation",
+      "canonical_name": "Enkei Corporation",
+      "wikidata_id": "Q3054409"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Hamamatsu",
+      "canonical_name": "Hamamatsu",
+      "wikidata_id": "Q185125"
+    }
+  },
+  {
+    "subject": {
+      "name": "Enkei Corporation",
+      "canonical_name": "Enkei Corporation",
+      "wikidata_id": "Q3054409"
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "cast aluminum wheels",
+      "canonical_name": "cast aluminum wheels",
+      "wikidata_id": null
+    }
+  },
+  {
+    "subject": {
+      "name": "Enkei Corporation",
+      "canonical_name": "Enkei Corporation",
+      "wikidata_id": "Q3054409"
+    },
+    "predicate": "suppliesTo",
+    "object": {
+      "name": "Toyota",
+      "canonical_name": "Toyota",
+      "wikidata_id": "Q53268"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aisan Industry",
+      "canonical_name": "Aisan Industry",
+      "wikidata_id": "Q11493434"
+    },
+    "predicate": "produces",
+    "object": {
+      "name": "Oil control valve for cam phaser",
+      "canonical_name": "Oil control valve for cam phaser",
+      "wikidata_id": "Q122584017"
+    }
+  },
+  {
+    "subject": {
+      "name": "Aisan Industry",
+      "canonical_name": "Aisan Industry",
+      "wikidata_id": "Q11493434"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Obu",
+      "canonical_name": "Obu",
+      "wikidata_id": "Q384809"
+    }
+  },
+  {
+    "subject": {
+      "name": "Obu",
+      "canonical_name": "Obu",
+      "wikidata_id": "Q384809"
+    },
+    "predicate": "locatedIn",
+    "object": {
+      "name": "Aichi",
+      "canonical_name": "Aichi",
+      "wikidata_id": "Q94094"
+    }
+  }
+]
