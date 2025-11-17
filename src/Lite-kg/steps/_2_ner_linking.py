@@ -7,34 +7,34 @@ from ..core.models import NERLinkResult
 
 class NERLinker:
     """
-    [Step 2 & 2.5] 執行 Flair NER 並使用 Wikidata API 進行實體連結
+    [Step 2 & 2.5] Execute Flair NER and use the Wikidata API to link entities.
 
     """
 
     def __init__(self, ner_model_path: str):
         self.tagger = self._load_ner_model(ner_model_path)
-        self.wikidata_headers = {'User-Agent': 'Light_KG/1.0 (your_email@example.com)'}
+        self.wikidata_headers = {'User-Agent': 'Lite-KG/1.0 (your_email@example.com)'}
         self.wikidata_api_endpoint = "https://www.wikidata.org/w/api.php"
         self.total_linking_time = 0.0
 
     def _load_ner_model(self, model_path: str):
-        """載入 Flair NER 模型。"""
+        """Load Flair NER model"""
         try:
             tagger = SequenceTagger.load(model_path)
-            print(f"✅ Flair NER 模型從 '{model_path}' 載入成功！")
+            print(f" The Flair NER model was successfully loaded from '{model_path}'")
             return tagger
         except Exception as e:
-            print(f"❌ 載入 Flair NER 模型失敗: {e}")
+            print(f" Failed to load Flair NER model:{e}")
             return None
 
     def _get_ner_entities(self, text: str) -> List[str]:
         """
-        [Step 2] 使用 Flair NER 模型從 ontology filter 後的文本中提取實體
+        [Step 2] Extract entities from the text after the ontology filter using the Flair NER model.
         Input: shorter texts from step 1 
         Output: entities
         """
         if not self.tagger:
-            print("  - Step 2 (NER): NER 模型未載入")
+            print("Step 2 (NER): NER model not loaded")
             return []
             
         sentence = Sentence(text)
@@ -43,15 +43,15 @@ class NERLinker:
         
         raw_entity_texts = [entity.text for entity in entities]
         if len(raw_entity_texts) < 2:
-            print(f"  - Step 2 (NER): 找到少於 2 個實體")
+            print(f"Step 2 (NER): Find fewer than 2 entities")
             return []
             
-        print(f"  - Step 2 (NER): 找到 {len(raw_entity_texts)} 個原始實體: {raw_entity_texts[:5]}...")
+        print(f"Step 2 (NER): Find {len(raw_entity_texts)} raw entities: {raw_entity_texts[:5]}...")
         return raw_entity_texts
 
     def _get_wikidata_info_from_api(self, entity_name: str) -> Dict[str, Any]:
         """
-        [Step 2.5] 使用 Wikidata API 和設計候選排序
+        [Step 2.5] Using the Wikidata API and design candidate sorting
         """
         params = {
             'action': 'wbsearchentities',
@@ -67,7 +67,7 @@ class NERLinker:
             data = response.json()
 
             if not data.get("search"):
-                print(f"    - API 未能找到 '{entity_name}' 的任何候選")
+                print(f"The API failed to find any candidates for '{entity_name}'.")
                 return None
 
             candidates = data["search"]
@@ -99,23 +99,23 @@ class NERLinker:
                 q_id = best_candidate.get("id")
                 final_label = best_candidate.get("label")
                 desc = best_candidate.get("description", "N/A")
-                print(f"    - API 找到 '{entity_name}' 的最佳匹配 (分數: {highest_score}): {q_id} - {final_label} ({desc})")
+                print(f"The API found the best match for'{entity_name}' (score: {highest_score}): {q_id} - {final_label} ({desc})")
                 return {
                     'name': entity_name,
                     "canonical_name": final_label,
                     "wikidata_id": q_id
                 }
             else:
-                print(f"    - API 未找到 '{entity_name}' 的候選")
+                print(f"No candidate for'{entity_name}'was found in the API.")
                 return None
 
         except requests.exceptions.RequestException as e:
-            print(f"    - 呼叫 Wikidata API 時發生網路錯誤: {e}")
+            print(f"A network error occurred while calling the Wikidata API:{e}")
             return None
 
     def link_entities(self, text: str) -> NERLinkResult:
         """
-        [Step 2 & 2.5] 執行 NER 並進行實體連結
+        [Step 2 & 2.5] Perform NER and make entity connections
         """
         # Step 2: NER
         raw_entity_texts = self._get_ner_entities(text)
@@ -123,7 +123,7 @@ class NERLinker:
             return NERLinkResult(lookup_map={}, canonical_entities_for_re=[])
 
         # Step 2.5: Entity Linking
-        print("  - Step 2.5 (Linking): 正在使用 Wikidata API 進行實體連結...")
+        print("Step 2.5 (Linking): Entity linking is being performed using the Wikidata API.")
         linking_start = time.time()
         
         entity_map = {}
@@ -135,8 +135,8 @@ class NERLinker:
             if api_result:
                 entity_map[entity_name] = api_result
             else:
-                # 即使連結失敗，也保留原始名稱作為標準名稱
-                # 保持結構一致，包含 name 鍵
+                # Retain the original name as the standard name even if the link fails
+                # Maintain structural consistency, including the name key
                 entity_map[entity_name] = {
                     "name": entity_name,
                     "canonical_name": entity_name, 
@@ -148,16 +148,16 @@ class NERLinker:
         linking_end = time.time()
         linking_duration = linking_end - linking_start
         self.total_linking_time += linking_duration
-        print(f"  - Step 2.5 (Linking): 本次連結耗時: {linking_duration:.2f} 秒")
+        print(f"Step 2.5 (Linking): This link took: {linking_duration:.2f} seconds.")
 
-        # 建立用於 RE 步驟的 lookup map 和標準化實體列表
+        # Create a lookup map and standardized entity list for the RE step.
         lookup = {}
         for raw_name, info in entity_map.items():
             if info and info.get('canonical_name'):
                 lookup[raw_name.lower()] = info
                 lookup[info['canonical_name'].lower()] = info
         
-        # 直接從 entity_map 提取 canonical_name，避免重複處理
+        # Extract the canonical_name directly from the entity_map to avoid duplicate processing.
         canonical_entities_for_re = sorted(
             list(set(
                 info['canonical_name'] 
@@ -167,7 +167,7 @@ class NERLinker:
             key=str.lower
         )
         
-        print(f"  - Step 2.5 (Linking): 標準化後實體 ({len(canonical_entities_for_re)} 個): {canonical_entities_for_re[:5]}...")
+        print(f"Step 2.5 (Linking): Standardized entities ({len(canonical_entities_for_re)}: {canonical_entities_for_re[:5]}...")
 
         return NERLinkResult(
             lookup_map=lookup,

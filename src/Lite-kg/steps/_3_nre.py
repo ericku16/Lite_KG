@@ -4,7 +4,7 @@ from typing import List, Any
 
 class RelationExtractor:
     """
-    [Step 3] 使用 ollama 從 ontology filter 後的文本和 NER 提取的實體 提取關係三元組
+    [Step 3] Use ollama to extract relation triples from the text after the ontology filter and entities extracted by NER.
     Input: shorter texts from step 1 and entities from step 2
     Output: triples
     """
@@ -53,7 +53,6 @@ T16. Adhere strictly to these rules. Non-compliance will result in termination.
         })
 
         try:
-            # 必須要求 JSON 輸出
             response_content = self.llm_client.chat(
                 system_prompt=self.system_prompt,
                 user_content=user_content,
@@ -61,19 +60,19 @@ T16. Adhere strictly to these rules. Non-compliance will result in termination.
             )
             
             if not response_content:
-                print("  - Step 3 (RE): API 未回傳內容")
+                print("Step 3 (RE): API did not return content.")
                 return []
 
             response_data = json.loads(response_content)
             relations = response_data.get("relations", [])
             
             if relations:
-                print(f"  - Step 3 (RE): 找到 {len(relations)} 筆關聯")
+                print(f"Step 3 (RE): Find {len(relations)} associations.")
             else:
-                print("  - Step 3 (RE): 沒有找到關聯。")
+                print("Step 3 (RE): No association found.")
                 
             return relations
             
         except Exception as e:
-            print(f"  - Step 3 (RE): LLM API 呼叫或 JSON 解析失敗: {e}")
+            print(f"Step 3 (RE): LLM API call or JSON parsing failed: {e}")
             return []

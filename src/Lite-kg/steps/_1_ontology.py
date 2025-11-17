@@ -2,7 +2,7 @@ from ..core.clients import BaseLLMClient
 
 class OntologyFilter:
     """
-    [Step 1] 使用 ollama 根據 ontology prompt 過濾句子並回傳過濾後的精簡文本 作為step2,3的 input
+    [Step 1] Use ollama to filter sentences based on the ontology prompt and return the filtered, concise text as input for steps 2 and 3.
     Input: entire long texts 
     Output: shorter texts
     """
@@ -30,8 +30,6 @@ Output: "Apple partners with TSMC to manufacture advanced chips in Taiwan."
 
     def filter_text(self, full_text: str) -> str:
         """
-        執行過濾
-        
         Input: entire long texts 
         Output: shorter texts
         """
@@ -42,14 +40,14 @@ Output: "Apple partners with TSMC to manufacture advanced chips in Taiwan."
                 is_json=False
             )
             
-            # 計算並印出過濾效果
+            # Calculate and print the filtering effect
             original_len = len(full_text)
             filtered_len = len(filtered_text)
             reduction_percent = (1 - filtered_len / original_len) * 100 if original_len > 0 else 0
-            print(f"  ✅ Step 1 (Filter): 句子過濾完成。原文長度: {original_len}, 過濾後長度: {filtered_len} (減少 {reduction_percent:.1f}%)")
+            print(f"Step 1 (Filter): Sentence filtering complete. Original length: {original_len}, Filtered length: {filtered_len} (reduction of {reduction_percent:.1f}%)")
             
             return filtered_text
             
         except Exception as e:
-            print(f"  ❌ Step 1 (Filter): 句子過濾失敗: {e}. 將使用原始文本")
+            print(f"Step 1 (Filter): Sentence filtering failed: {e}. The original text will be used.")
             return full_text

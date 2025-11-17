@@ -10,28 +10,16 @@ import ollama
 
 class BaseLLMClient(ABC):
     """
-    定義一個統一的 'chat' 介面
+    Define a unified 'chat' interface
     """
     def __init__(self, model_name: str):
         self.model = model_name
 
     @abstractmethod
     def chat(self, system_prompt: str, user_content: str, is_json: bool = False) -> str:
-        """
-        Args:
-            system_prompt: 系統提示
-            user_content: 用戶輸入
-            is_json: 是否強制要求 JSON 輸出
-
-        Returns:
-            模型回傳的內容 (str)
-        """
         pass
 
 class OpenAIClient(BaseLLMClient):
-    """
-    OpenAI API 客戶端
-    """
     def __init__(self, model_name: str, api_key: str):
         super().__init__(model_name)
         if not api_key:
@@ -54,19 +42,16 @@ class OpenAIClient(BaseLLMClient):
             )
             return completion.choices[0].message.content
         except Exception as e:
-            print(f"❌ OpenAI API call failed: {e}")
+            print(f"OpenAI API call failed: {e}")
             return ""
 
 class OllamaClient(BaseLLMClient):
-    """
-    Ollama 客戶端
-    """
     def __init__(self, model_name: str):
         super().__init__(model_name)
         try:
             ollama.list()
         except Exception as e:
-            print(f"⚠️ Warning: Could not connect to Ollama. Is it running? {e}")
+            print(f"Warning: Could not connect to Ollama. Is it running? {e}")
 
     def chat(self, system_prompt: str, user_content: str, is_json: bool = False) -> str:
         try:
@@ -89,7 +74,7 @@ class OllamaClient(BaseLLMClient):
 
 def get_llm_client(provider: str, model_name: str, api_key: str = None) -> BaseLLMClient:
     """
-    根據 'provider' 決定執行哪個 LLM 客戶端
+    The choice of which LLM client to execute depends on the provider
     """
     if provider == "openai":
         return OpenAIClient(model_name=model_name, api_key=api_key)

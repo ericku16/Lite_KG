@@ -1,4 +1,4 @@
-# Lite_KG (Lightweight Knowledge Graph Extractor)
+# Lite-KG (Lightweight Knowledge Graph Extractor)
 
 This project is a **lightweight** and modular Knowledge Graph (KG) extraction pipeline, specialized for the **automotive supply chain**. It is designed to extract structured information from plain text (.txt) or PDF files and suitable for use with local LLMs via **Ollama**.
 
@@ -14,29 +14,20 @@ This project allows you to freely switch between LLM engines like OpenAI (e.g., 
 
 ## 1. Clone the Project
 ```bash
-git clone [https://github.com/ericku16/Light_KG.git]
-cd lite_kg
+git clone [https://github.com/ericku16/Lite-KG.git]
+cd lite-kg
 
 # Create a new conda environment 
-conda create -n lite_kg python=3.10
+conda create -n lite-kg python=3.10
 
 # Activate the environment
-conda activate lite_kg
+conda activate lite-kg
 
 # Install all required packages from requirements.txt
 pip install -r requirements.txt
 ```
 
-### Option A: Use the Default NER-Model 
-The default model (`final-model.pt`) is a custom-trained Flair NER model, **specialized for the automotive supply chain**.
-
-This model is required for the project to run out-of-the-box but is too large to be hosted on GitHub (it is ignored by `.gitignore`). You must download it manually.
-
-1. [Download the Default Model (final-model.pt) here](https://drive.google.com/drive/folders/18D1K_IQxwZPtPt7V6Ni_tOljvKazWfS9?usp=sharing)
-2. After downloading, create a model folder in the project's root directory (at the same level as src).
-3. Place the final-model.pt file inside this model folder.
-
-### Option B: Use Your Own Custom-Trained NER-Model
+###  Use Your Own Custom-Trained NER-Model
 This project can load any Flair-trained .pt model.
 
 1. Place your own model (e.g., my_ner_model.pt) into the model/ folder.
@@ -75,3 +66,7 @@ MODEL_NAME = "mistral:latest"
 # 3. Run the Program
 python examples/run_extraction.py
 ```
+## License
+The MIT License.
+
+
