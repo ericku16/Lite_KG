@@ -3,7 +3,7 @@ import fitz  # PyMuPDF
 
 def load_document(file_path: str) -> str:
     """
-    根據副檔名 (.txt 或 .pdf) 讀取檔案內容。
+    Read the contents of the file based on the file extension (.txt or .pdf).
     """
     content = ""
     try:
@@ -14,9 +14,9 @@ def load_document(file_path: str) -> str:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
         else:
-            print(f"  - Warning: Skipping unsupported file type: {file_path}")
+            print(f"Warning: Skipping unsupported file type: {file_path}")
             
     except Exception as e:
-        print(f"  ❌ Error reading file {file_path}: {e}")
+        print(f"Error reading file {file_path}: {e}")
         
     return content

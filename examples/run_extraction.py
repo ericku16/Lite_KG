@@ -17,11 +17,11 @@ sys.path.insert(0, src_root)
 
 try:
     # Import Extractor
-    from lite_kg.extractor import Extractor   # type: ignore[reportMissingImports]
+    from litekg.extractor import Extractor   # type: ignore[reportMissingImports]
 except ImportError:
-    print("Error: Could not import the 'lite-kg' module.")
+    print("Error: Could not import the 'litekg' module.")
     print(f"Please ensure the 'src' directory is located at: {src_root}")
-    print("And that the 'lite-kg' folder exists within 'src'.")
+    print("And that the 'litekg' folder exists within 'src'.")
     sys.exit(1)
 
 # ==============================================================================
@@ -29,7 +29,7 @@ except ImportError:
 # ==============================================================================
 
 # 1. Select LLM Provider ("openai" or "ollama")
-PROVIDER = "openai" 
+PROVIDER = "ollama" 
 
 # 2. Select Model based on Provider (e.g., "gpt-4o" or "mistral:latest") 
 MODEL_NAME = "gpt-4o" if PROVIDER == "openai" else "mistral:latest"
@@ -63,7 +63,7 @@ def main():
     if not os.path.exists(NER_MODEL_PATH):
         print(f"Error: NER model path does not exist: {NER_MODEL_PATH}")
         print(f"Please update the 'NER_MODEL_PATH' variable in 'examples/run_extraction.py")
-        print(f"The model file should be located at: {os.path.join(project_root, 'model', 'ner_model', 'final-model.pt')}")
+        print(f"The model file should be located at: {os.path.join(project_root, "model", "your_model.pt")}")
         return
 
     if not os.path.exists(DOCUMENTS_FOLDER):
