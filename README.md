@@ -49,7 +49,7 @@ OLLAMA_HOST="http://localhost:11434"
 ## 3. How to Execute
 
 ### Step 1: Place Your Files (there are some default examples)
-Put all the `.txt` or `.pdf` files you want to analyze into the `examples` folder.
+Put all the `.txt` or `.pdf` files you want to analyze into the `examples/example` folder.
 
 ### Step 2: Select Your LLM
 Open the file **`examples/run_extraction.py`** in your code editor.
