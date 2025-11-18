@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 
 # --- Step: Add src directory to Python path ---
-# Import 'Extractor' from 'src/light_kg'
+# Import 'Extractor' from 'src/lite-kg'
 script_dir = os.path.dirname(__file__)
 
 # Get project root (one level up from 'examples')
